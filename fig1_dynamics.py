@@ -45,8 +45,8 @@ for ax, beta, title in zip(axes, betas, titles):
 axes[0].set_ylabel("reputation $r_t$"); axes[0].set_ylim(-2.6, 2.6)
 axes[1].tick_params(labelleft=False)
 
-handles = [Line2D([], [], color=c, lw=1.6, label=("generous" if g > 0 else "stingy") + f" ($g={g:+}$)") for g, c in gs.items()] + \
-          [Line2D([], [], color="gray", ls=ls, lw=1.6, label=("good" if r1 > 0 else "bad") + f" initial name ($r_1={r1:+g}$)") for r1, ls in r1s.items()] + \
+handles = [Line2D([], [], color=c, lw=1.6, label= f"$g={g:+}$") for g, c in gs.items()] + \
+          [Line2D([], [], color="gray", ls=ls, lw=1.6, label= f"$r_0={r1:+g}$") for r1, ls in r1s.items()] + \
           [Line2D([], [], color="gray", ls=":", lw=0.9, label="true generosity $g$")]
 fig.legend(handles=handles, frameon=False, fontsize=9, ncol=5, loc="lower center", bbox_to_anchor=(0.5, 0.0))
 fig.tight_layout(rect=(0, 0.08, 1, 1))
